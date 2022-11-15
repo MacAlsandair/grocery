@@ -1,4 +1,4 @@
-package com.macalsandair.goods;
+package com.macalsandair.product;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.macalsandair.goods;
+package com.macalsandair.product;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
