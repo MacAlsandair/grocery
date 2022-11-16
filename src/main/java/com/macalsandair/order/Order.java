@@ -1,12 +1,18 @@
 package com.macalsandair.order;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.macalsandair.auth.ApplicationUser;
 
 //How i understand, there should be one class for the whole grocery store, which represents 
 // assortment and product availability for the whole store, and adding new product should be done
@@ -27,6 +33,17 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	@OneToMany
+	@JoinColumn(name = "ordered_product")
 	private List<OrderedProduct> orderedProducts;
+	
+	@OneToOne
+	@JoinColumn(name = "application_user_id")
+	private ApplicationUser applicationUser;
+	
+	private int price;
+	private String address;
+	private LocalDateTime date;
 
+	Order() {}
 }

@@ -30,9 +30,14 @@ public class OrderedProduct {
 	private Order order;
 	
 	@OneToOne
-	@JoinColumn(name = "product_type")
+	@JoinColumn(name = "product_type_id")
 	private Product productType;
 	private int amount;
+	
+	
+	OrderedProduct() {
+	}
+	
 	
 
 }
