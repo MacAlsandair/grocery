@@ -7,18 +7,18 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 public class ApplicationUserService implements UserDetailsService {
 
-	private final ApplicationUserDao applicationUserDao;
+	private final ApplicationUserExtractor applicationUserExtractor;
 	
-	public ApplicationUserService(@Qualifier("postgresUserDao") ApplicationUserDao applicationUserDao) {
+	public ApplicationUserService(@Qualifier("postgresUserExtractor") ApplicationUserExtractor applicationUserExtractor) {
 		super();
-		this.applicationUserDao = applicationUserDao;
+		this.applicationUserExtractor = applicationUserExtractor;
 	}
 
 
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		return applicationUserDao.selectApplicationUserByUsername(username).orElseThrow(
+		return applicationUserExtractor.selectApplicationUserByUsername(username).orElseThrow(
 				() -> new UsernameNotFoundException(String.format("Username %s not found", username)));
 	}
 
