@@ -15,8 +15,8 @@ import com.macalsandair.product.Product;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity(name = "Popcard")
-@Table(name = "table")
+@Entity(name = "OrderedProduct")
+@Table(name = "ordered_product")
 @Getter
 @Setter
 public class OrderedProduct {
@@ -34,10 +34,5 @@ public class OrderedProduct {
 	private Product productType;
 	private int amount;
 	
-	
-	OrderedProduct() {
-	}
-	
-	
-
+	OrderedProduct() {}
 }

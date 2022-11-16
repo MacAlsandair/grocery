@@ -3,8 +3,16 @@ package com.macalsandair.auth;
 import java.util.Collection;
 import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+//I still don't know, how to store in database GrantedAuthorities. How could it be an entity?
 
 public class ApplicationUser implements UserDetails {
 	

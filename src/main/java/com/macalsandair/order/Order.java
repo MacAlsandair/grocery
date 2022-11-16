@@ -25,8 +25,8 @@ import com.macalsandair.auth.ApplicationUser;
 // all amount of essential data about an order, and then, if it is necessary, display a full list of all ordered goods.
 
 
-@Entity(name = "Popcard")
-@Table(name = "table")
+@Entity(name = "Order")
+@Table(name = "order")
 public class Order {
 	
 	@Id
